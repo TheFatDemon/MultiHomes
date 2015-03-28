@@ -75,7 +75,7 @@ public class HomePermissions {
 				blnHasPermission = vault.has(player, permission);
 				break;
 			case PERMISSIONSEX:
-				blnHasPermission = PermissionsEx.getPermissionManager().has(player, permission);
+				blnHasPermission = PermissionsEx.getUser(player).has(permission);
 				break;
             // Removed Legacy Permissions Plugin
 			case PERMISSIONSBUKKIT:

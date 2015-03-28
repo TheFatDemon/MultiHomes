@@ -3,7 +3,7 @@ package me.thefatdemon.multihome.data.invite;
 import me.thefatdemon.multihome.Messaging;
 import me.thefatdemon.multihome.MultiHome;
 import me.thefatdemon.multihome.Settings;
-import net.madmanmarkau.MultiHome.*;
+import me.thefatdemon.multihome.*;
 
 import java.sql.*;
 import java.util.ArrayList;

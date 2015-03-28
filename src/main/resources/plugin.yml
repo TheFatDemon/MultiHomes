@@ -1,6 +1,6 @@
 name: MultiHome
 version: 0.15
-main: MultiHome
+main: me.thefatdemon.multihome.MultiHome
 authors:
  - MadManMarkAu
  - Sleaker
