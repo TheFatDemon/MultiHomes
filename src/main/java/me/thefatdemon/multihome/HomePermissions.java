@@ -34,16 +34,16 @@ public class HomePermissions {
 		} catch (NoClassDefFoundError | Exception ignored) {
 		}
 
-        if (vaultPermissionProvider != null) {
-        	vault = vaultPermissionProvider.getProvider();
-			handler = PermissionsHandler.VAULT;
-			Messaging.logInfo("Using Vault for permissions system.", plugin);
-			return true;
-        } else if (permex != null) {
-			permissionPlugin = permex;
-			handler = PermissionsHandler.PERMISSIONSEX;
-			Messaging.logInfo("Using PermissionsEx for permissions system.", plugin);
-			return true;
+        if (permex != null) {
+            permissionPlugin = permex;
+            handler = PermissionsHandler.PERMISSIONSEX;
+            Messaging.logInfo("Using PermissionsEx for permissions system.", plugin);
+            return true;
+        } else if (vaultPermissionProvider != null) {
+            vault = vaultPermissionProvider.getProvider();
+            handler = PermissionsHandler.VAULT;
+            Messaging.logInfo("Using Vault for permissions system.", plugin);
+            return true;
 		} else if (bukkitperms != null) {
 			permissionPlugin = bukkitperms;
 			handler = PermissionsHandler.PERMISSIONSBUKKIT;
