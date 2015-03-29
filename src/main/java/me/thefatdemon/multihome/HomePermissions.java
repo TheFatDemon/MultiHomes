@@ -8,6 +8,8 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
+import java.util.List;
+
 /**
 *
 * @author Sleaker
@@ -93,7 +95,7 @@ public class HomePermissions {
 	}
 
 	public static String getGroup(Player player) {
-		String[] groups;
+		List<String> groups;
 		
 		if (player != null) {
 			switch (handler) {
@@ -101,10 +103,10 @@ public class HomePermissions {
 					return vault.getPrimaryGroup(player);
 					
 				case PERMISSIONSEX:
-					groups = (String[]) PermissionsEx.getPermissionManager().getUser(player).getParentIdentifiers().toArray();
+					groups = PermissionsEx.getUser(player).getParentIdentifiers();
 					
-					if (groups.length > 0) {
-						return groups[0];
+					if (groups.size() > 0) {
+						return groups.get(0);
 					}
 					break;
                 // Removed Legacy Permissions Plugin
